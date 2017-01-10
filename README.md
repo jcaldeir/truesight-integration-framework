@@ -12,7 +12,7 @@ A JavaScript Framework to integrate third-party solutions with BMC TrueSight Ope
  - TrueSight Intelligence
  - TrueSight Pulse
  
-### Source Platforms Supported(included)
+### Source Platforms Supported (included)
  - CA Wily
  - Twitter search API
 
@@ -25,12 +25,13 @@ A JavaScript Framework to integrate third-party solutions with BMC TrueSight Ope
 | Required |    +    |        |      |
 
 - Install NodeJs bundle for your platform - https://nodejs.org
+- Make sure it is added to the path
 
 
 ### Install the integration framework
 
 - Download this software either in a zip file or clone this repository
-- From the root directory of the software run: "npm install"
+- From the root/base folder of the software run: "npm install"
 
 
 ### Configure it
@@ -66,6 +67,7 @@ A JavaScript Framework to integrate third-party solutions with BMC TrueSight Ope
 |truesight_auth_context       |													   |
 |truesight_payload_context    |													   |
 |truesight_messaging_queue    |													   |
+|truesight_send_queue         |													   |
 |truesight_reply_queue        |													   |
 |truesight_username           |													   |
 |truesight_password           |													   |
