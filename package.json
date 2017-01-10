@@ -1,0 +1,38 @@
+{
+    "name": "truesight-integration-framework",
+	"version": "0.0.1",
+	"description": "A JavaScript Framework to integrate Third-Party solutions with TrueSight Operations/Intelligence/Pulse",
+	"author": "João Caldeira <joao_caldeira@bmc.com>",
+	"private": true,
+    "main": "server.js",
+    "dependencies": {
+		"basic-auth-connect": "*",
+		"serve-favicon": "*",
+		"eyes": "*",
+		"colors": "*",
+		"path": "*",
+		"request": "*",
+        "express": "*",
+		"socket.io": "*",
+		"socket.io-client": "*",
+		"soap": "*",
+		"twitter-node-client": "*",
+		"xml2json": "*",
+		"xml2js": "*",
+		"jdbc": "*",
+		"java": "*",
+		"express-delay": "*",
+        "body-parser": "*",
+		"morgan" : "*",
+		"method-override" : "*",
+		"node-rest-client": "*",
+		"node-random-number": "",
+		"shelljs" : "*",
+		"dateformat": "*",
+		"cli-table": "*",
+		"decache": "*"
+    },
+	"scripts": {
+    "start": "cls && node server.js"
+  }
+}
