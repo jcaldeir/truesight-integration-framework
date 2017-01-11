@@ -3,7 +3,7 @@ A JavaScript Framework to integrate third-party solutions with BMC TrueSight Ope
 
 
 ## Purpose
- - Ths folder contains the log files produced by the engine and the integrations enabled
+ - This folder contains the log files produced by the engine and the integrations enabled
 
  
 ### Credits
