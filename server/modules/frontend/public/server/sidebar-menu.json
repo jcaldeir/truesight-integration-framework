@@ -1,0 +1,70 @@
+[
+  {
+    "text": "Main Navigation",
+    "heading": "true",
+    "translate": "sidebar.heading.HEADER"
+  },
+  {
+    "text": "Management",
+    "heading": "true",
+    "translate": "sidebar.heading.MANAGEMENT"
+  },
+  {
+    "text": "Engine Monitoring",
+    "sref": "#",
+    "icon": "icon-list",
+    "alert": "" ,
+    "label": "label label-info",
+    "submenu": [
+      {"text": "Monitor",       "sref": "app.engine-monitor"},
+      {"text": "Settings",       "sref": "app.engine-settings" }
+    ],
+    "translate": "sidebar.nav.ENGINE"
+  },
+  {
+    "text": "Integrations",
+    "sref": "#",
+    "icon": "fa fa-chain",
+    "alert": "" ,
+    "label": "label label-info",
+    "submenu": [
+      {"text": "Monitor",        "sref": "app.engine-integrations"},
+      {"text": "Settings",       "sref": "app.integrations-settings" }
+    ],
+    "translate": "sidebar.nav.INTEGRATIONS"
+  },
+  {
+    "text": "API Commands",
+    "sref": "app.api-management",
+    "icon": "fa fa-book",
+    "alert": "Cool",
+    "label": "label label-success",
+    "translate": "sidebar.nav.API"
+  },
+  {
+    "text": "Debug",
+    "heading": "true",
+    "translate": "sidebar.heading.DEBUG"
+  },
+  {
+    "text": "Event Logs",
+    "sref": "#",
+    "icon": "fa fa-file-text-o",
+    "alert": "" ,
+    "label": "label label-info",
+    "submenu": [
+      {"text": "Server",       "sref": "app.events"}
+    ],
+    "translate": "sidebar.nav.LOG"
+  },
+  {
+    "text": "Documentation",
+    "sref": "app.docs",
+    "icon": "fa fa-book",
+    "alert": "New" ,
+    "label": "label label-info",
+    "translate": "sidebar.nav.DOCUMENTATION"
+  }
+  
+  
+]

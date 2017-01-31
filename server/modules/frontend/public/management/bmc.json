@@ -1,0 +1,254 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "TrueSight Integration API",
+        "description": "Make this your entrypoint to manage the Integration Framework",
+        "version": "1.0.0"
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+	"securityDefinitions": {
+        "basicAuth": {
+            "type": "basic",
+            "description": "HTTP Basic Authentication. Works over `HTTP` and `HTTPS`"
+        }
+    },
+    "basePath": "/api",
+	"consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/collection/wily/start": {
+            "get": {
+                "summary": "Starts Wily collection",
+                "description": "It starts the Wily collection until a stop call is made\n",
+                "tags": [
+                     "Collection", "CA Wily"
+                ],
+				"security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The collection started successfully"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/collection/wily/stop": {
+            "get": {
+                "summary": "Stops Wily collection",
+                "description": "It stops the Wily collection until a start call is made\n",
+                "tags": [
+                    "Collection", "CA Wily"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The collection stopped successfully"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/collection/wily/status": {
+            "get": {
+                "summary": "Return the Wily collection status",
+                "description": "It returns the Wily collection status\n",
+                "tags": [
+                     "Collection", "CA Wily"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The collection stopped successfully"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+		"/collection/wily/getemconfig": {
+            "get": {
+                "summary": "Return CA Wily EM configuration information",
+                "description": "It returns the Wily EM information: Hostname, Port, URL, etc\n",
+                "tags": [
+                     "CA Wily"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The request run successfully"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+		"/collection/wily/getmanagedmodules": {
+            "get": {
+                "summary": "Return CA Wily EM installed modules",
+                "description": "It returns the Wily modules information: Name, Description, etc\n",
+                "tags": [
+                     "CA Wily"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The request run successfully"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+		"/collection/wily/getallalertssnapshot": {
+            "get": {
+                "summary": "Return CA Wily alerts information",
+                "description": "It returns the Wily alerts information: Name, Description, Threshold, etc\n",
+                "tags": [
+                     "CA Wily"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The request run successfully"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+		"/collection/wily/getmetricdata": {
+            "get": {
+                "summary": "Return CA Wily metrics data",
+                "description": "It returns the Wily metrics data: Name, Value, etc\n",
+                "tags": [
+                     "CA Wily"
+                ],
+				"parameters": [
+                    {	
+                        "in": "query",
+                        "name": "agent",
+                        "description": "The agent name (regex ex: '.emap.*' ) to query from",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "metric",
+                        "description": "The metric name (regex ex: '.*CPU.*') to query from",
+                        "required": false,
+                        "type": "string"
+                    },
+					{
+                        "in": "query",
+                        "name": "start",
+                        "description": "The start date/time (ex: 2016-10-01T00:20:00Z) to query from",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "end",
+                        "description": "The end date/time (ex: 2016-10-01T00:25:00Z) to query from",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "freq",
+                        "description": "The frequency (ex: 60) in seconds at which the metrics were collected",
+                        "required": false,
+                        "type": "string"
+                    },
+					{
+                        "in": "query",
+                        "name": "output",
+                        "description": "The filename where metrics are going to be saved (will apppend extension .xml)",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The request run successfully"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+		
+        "/wily/callback": {
+            "post": {
+                "summary": "Callback function after Wily data insertion happens",
+                "description": "It returns success on proper callback execution\n",
+                "tags": [
+                    "Callback"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The callback function was successfully executed"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Error": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "fields": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

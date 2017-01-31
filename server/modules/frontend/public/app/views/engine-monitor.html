@@ -1,0 +1,161 @@
+<h3>Monitoring
+   <small>Engine Components</small>
+</h3>
+<div class="row">
+   <div class="col-lg-12">
+
+<div class="container container-md">
+   
+   <div class="row">
+      <div class="col-md-4">
+         <div class="panel b" ng-model="engine.status">
+            <div class="panel-body text-center">
+               <a class="link-unstyled text-warning" href="">
+                  <em class="fa fa-5x fa-desktop mb-lg"></em>
+                  <br/>
+                  <span class="h4">{{status.engine.name}}</span>
+                  <br/>
+				  <div class="label {{status.engine.status}}">{{status.engine.message}}</div>
+               </a>
+            </div>
+			<div class="clearfix">
+               <div class="text-center">
+                  <button class="btn btn-default btn-oval" type="button" ng-click="refresh()" disabled>
+                     <em class="fa fa-play fa-fw text-muted"></em>
+                     <span>Start</span>
+                  </button>
+                  <button class="btn btn-default btn-oval" type="button" ng-click="refresh()" disabled>
+                     <em class="fa fa-stop fa-fw text-muted"></em>
+                     <span>Stop</span>
+                  </button>
+               </div>
+			   <br/>
+            </div>
+         </div>
+      </div>
+	  <div class="col-md-4">
+         <div class="panel b">
+            <div class="panel-body text-center">
+               <a class="link-unstyled text-default" href="">
+                  <em class="fa fa-5x fa-link mb-lg"></em>
+                  <br/>
+                  <span class="h4">{{status.proxy.name}}</span>
+                  <br/>
+				  <div class="label {{status.proxy.status}}">{{status.proxy.message}}</div>
+               </a>
+            </div>
+			<div class="clearfix">
+               <div class="text-center">
+                  <button class="btn btn-default btn-oval" type="button" disabled>
+                     <em class="fa fa-play fa-fw text-muted"></em>
+                     <span>Start</span>
+                  </button>
+                  <button class="btn btn-default btn-oval" type="button" disabled>
+                     <em class="fa fa-stop fa-fw text-muted"></em>
+                     <span>Stop</span>
+                  </button>
+               </div>
+			   <br/>
+            </div>
+         </div>
+      </div>
+	  <div class="col-md-4">
+         <div class="panel b">
+            <div class="panel-body text-center">
+               <a class="link-unstyled text-purple" href="">
+                  <em class="fa fa-5x fa-cubes mb-lg"></em>
+                  <br/>
+                  <span class="h4">{{status.messaging.name}}</span>
+                  <br/>
+				  <div class="label {{status.messaging.status}}">{{status.messaging.message}}</div>
+               </a>
+            </div>
+			<div class="clearfix">
+               <div class="text-center">
+                  <button class="btn btn-default btn-oval" type="button" disabled>
+                     <em class="fa fa-play fa-fw text-muted"></em>
+                     <span>Start</span>
+                  </button>
+                  <button class="btn btn-default btn-oval" type="button" disabled>
+                     <em class="fa fa-stop fa-fw text-muted"></em>
+                     <span>Stop</span>
+                  </button>
+               </div>
+			   <br/>
+            </div>
+         </div>
+      </div>
+	  
+     
+      <div class="col-md-4">
+         <div class="panel b">
+            <div class="panel-body text-center">
+               <a class="link-unstyled text-green" href="">
+                  <em class="fa fa-5x fa-diamond mb-lg"></em>
+                  <br/>
+                  <span class="h4">{{status.api.name}}</span>
+                  <br/>
+                  <div class="label {{status.api.status}}">{{status.api.message}}</div>
+               </a>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="panel b">
+            <div class="panel-body text-center">
+               <a class="link-unstyled text-danger" href="">
+                  <em class="fa fa-5x icon-people mb-lg"></em>
+                  <br/>
+                  <span class="h4">{{status.authentication.name}}</span>
+                  <br/>
+                  <div class="label {{status.authentication.status}}">{{status.authentication.message}}</div>
+               </a>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="panel b">
+            <div class="panel-body text-center">
+               <a class="link-unstyled text-success" href="">
+                  <em class="fa fa-5x icon-lock mb-lg"></em>
+                  <br/>
+                  <span class="h4">{{status.security.name}}</span>
+                  <br/>
+                  <div class="label {{status.security.status}}">{{status.security.message}}</div>
+               </a>
+            </div>
+         </div>
+      </div>
+    
+	 <div class="col-md-4" ng-repeat="native_integration in status.native_integrations" >
+         <div class="panel b">
+            <div class="panel-body text-center">
+               <a class="link-unstyled text-{{native_integration.theme}}" href="">
+                  <em class="fa fa-5x {{native_integration.icon}} mb-lg"></em>
+                  <br/>
+                  <span class="h4">{{native_integration.label}}</span>
+                  <br/>
+                  <div class="label label-inverse">{{native_integration.status}}</div>
+               </a>
+            </div>
+			<div class="clearfix hidden">
+               <div class="text-center">
+                  <button class="btn btn-default btn-oval" type="button" ng-click="start($index)">
+                     <em class="fa fa-play fa-fw text-muted"></em>
+                     <span>Enable</span>
+                  </button>
+                  <button class="btn btn-default btn-oval" type="button" ng-click="stop($index)">
+                     <em class="fa fa-stop fa-fw text-muted"></em>
+                     <span>Disable</span>
+                  </button>
+               </div>
+			   <br/>
+            </div>
+         </div>
+      </div>
+	  
+   </div>
+   
+</div>
+   </div>
+</div>

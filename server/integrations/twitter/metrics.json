@@ -1,0 +1,62 @@
+{ "metrics": [ {
+			 "name": "ORANGE.DERS.TWITTER.SMS",
+			 "description": "Quantite de tweet contenant Orange ou Sosh et SMS / unite de temps",
+			 "displayName": "Tweets Orange-Sosh SMS",
+			 "displayNameShort": "Tweets SMS",
+			 "unit": "number",
+			 "defaultAggregate": "sum",
+			 "defaultResolutionMS": 60000,
+			 "type": "Social networks"
+	},
+	{
+			 "name": "ORANGE.DERS.TWITTER.MMS",
+			 "description": "Quantite de tweet contenant Orange ou Sosh et MMS / unite de temps",
+			 "displayName": "Tweets Orange-Sosh MMS",
+			 "displayNameShort": "Tweets MMS",
+			 "unit": "number",
+			 "defaultAggregate": "sum",
+			 "defaultResolutionMS": 60000,
+			 "type": "Social networks"
+	},
+	{
+			 "name": "ORANGE.DERS.TWITTER.TEXTO",
+			 "description": "Quantite de tweet contenant Orange ou Sosh et texto / unite de temps",
+			 "displayName": "Tweets Orange-Sosh Texto",
+			 "displayNameShort": "Tweets Texto",
+			 "unit": "number",
+			 "defaultAggregate": "sum",
+			 "defaultResolutionMS": 60000,
+			 "type": "Social networks"
+	},
+	{
+			 "name": "ORANGE.DERS.TWITTER.PHOTO",
+			 "description": "Quantite de tweet contenant Orange ou Sosh et Envoi Photo / unite de temps",
+			 "displayName": "Tweets Orange-Sosh Envoi Photo",
+			 "displayNameShort": "Tweets Photo",
+			 "unit": "number",
+			 "defaultAggregate": "sum",
+			 "defaultResolutionMS": 60000,
+			 "type": "Social networks"
+	},
+	{
+			 "name": "ORANGE.DERS.TWITTER.IMAGE",
+			 "description": "Quantite de tweet contenant Orange ou Sosh et Envoi Image / unite de temps",
+			 "displayName": "Tweets Orange-Sosh Envoi Image",
+			 "displayNameShort": "Tweets Image",
+			 "unit": "number",
+			 "defaultAggregate": "sum",
+			 "defaultResolutionMS": 60000,
+			 "type": "Social networks"
+	},
+	{
+			 "name": "ORANGE.DERS.TWITTER.MESSAGE",
+			 "description": "Quantite de tweet contenant Orange ou Sosh et Message / unite de temps",
+			 "displayName": "Tweets Orange-Sosh Message",
+			 "displayNameShort": "Tweets Message",
+			 "unit": "number",
+			 "defaultAggregate": "sum",
+			 "defaultResolutionMS": 60000,
+			 "type": "Social networks"
+	} 
+	
+] }

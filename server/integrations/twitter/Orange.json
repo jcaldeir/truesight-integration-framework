@@ -1,0 +1,189 @@
+{ "metrics": [ 
+    {
+      "name": "ORANGE.DERS.TWITTER.GLOBAL",
+      "type": "SOCIAL NETWORKS",
+      "defaultAggregate": "SUM",
+      "defaultResolutionMS": 60000,
+      "description": "Quantite de tweet contenant Orange ou Sosh par minute",
+      "displayName": "Orange-Sosh global",
+      "displayNameShort": "Global",
+      "unit": "number"
+},
+    {
+      "name": "ORANGE.DERS.TWITTER.IMAGE",
+      "type": "SOCIAL NETWORKS",
+      "defaultAggregate": "AVG",
+      "defaultResolutionMS": 1000,
+      "description": "ORANGE.DERS.TWITTER.IMAGE",
+      "displayName": "ORANGE.DERS.TWITTER.IMAGE",
+      "displayNameShort": "ORANGE.DERS.TWITTER.IMAGE",
+      "unit": "number",
+      "isDisabled": false,
+      "isBuiltin": false,
+      "triggerInterval": {
+        "threshold": {
+          "min": 1000,
+          "max": null,
+          "def": 60000
+        },
+        "communication": {
+          "min": 60000,
+          "max": null,
+          "def": 300000
+        }
+      },
+      "indelible": false
+    },
+    {
+      "name": "ORANGE.DERS.TWITTER.MESSAGE",
+      "type": "SOCIAL NETWORKS",
+      "defaultAggregate": "AVG",
+      "defaultResolutionMS": 1000,
+      "description": "ORANGE.DERS.TWITTER.MESSAGE",
+      "displayName": "ORANGE.DERS.TWITTER.MESSAGE",
+      "displayNameShort": "ORANGE.DERS.TWITTER.MESSAGE",
+      "unit": "number",
+      "isDisabled": false,
+      "isBuiltin": false,
+      "triggerInterval": {
+        "threshold": {
+          "min": 1000,
+          "max": null,
+          "def": 60000
+        },
+        "communication": {
+          "min": 60000,
+          "max": null,
+          "def": 300000
+        }
+     },
+      "indelible": false
+    },
+    {
+      "name": "ORANGE.DERS.TWITTER.MMS",
+      "type": "SOCIAL NETWORKS",
+      "defaultAggregate": "AVG",
+      "defaultResolutionMS": 1000,
+      "description": "ORANGE.DERS.TWITTER.MMS",
+      "displayName": "ORANGE.DERS.TWITTER.MMS",
+      "displayNameShort": "ORANGE.DERS.TWITTER.MMS",
+      "unit": "number",
+      "isDisabled": false,
+      "isBuiltin": false,
+      "triggerInterval": {
+        "threshold": {
+          "min": 1000,
+          "max": null,
+          "def": 60000
+        },
+        "communication": {
+          "min": 60000,
+          "max": null,
+          "def": 300000
+        }
+      },
+      "indelible": false
+    },
+    {
+      "name": "ORANGE.DERS.TWITTER.PHOTO",
+      "type": "SOCIAL NETWORKS",
+      "defaultAggregate": "AVG",
+      "defaultResolutionMS": 1000,
+      "description": "ORANGE.DERS.TWITTER.PHOTO",
+      "displayName": "ORANGE.DERS.TWITTER.PHOTO",
+      "displayNameShort": "ORANGE.DERS.TWITTER.PHOTO",
+      "unit": "number",
+      "isDisabled": false,
+      "isBuiltin": false,
+      "triggerInterval": {
+        "threshold": {
+          "min": 1000,
+          "max": null,
+          "def": 60000
+        },
+        "communication": {
+          "min": 60000,
+          "max": null,
+          "def": 300000
+        }
+      },
+      "indelible": false
+    },
+    {
+      "name": "ORANGE.DERS.TWITTER.SENTIMENT",
+      "type": "SOCIAL NETWORKS",
+      "defaultAggregate": "AVG",
+      "defaultResolutionMS": 60000,
+      "description": "Sentiment sur les tweets contenant Orange ou Sosh",
+      "displayName": "Orange-Sosh Sentiment",
+      "displayNameShort": "Score",
+      "unit": "number",
+      "isDisabled": false,
+      "isBuiltin": false,
+      "triggerInterval": {
+        "threshold": {
+          "min": 1000,
+          "max": null,
+          "def": 60000
+        },
+        "communication": {
+          "min": 180000,
+          "max": null,
+          "def": 300000
+        }
+      },
+      "indelible": false
+    },
+    {
+      "name": "ORANGE.DERS.TWITTER.SMS",
+      "type": "SOCIAL NETWORKS",
+      "defaultAggregate": "AVG",
+      "defaultResolutionMS": 1000,
+      "description": "ORANGE.DERS.TWITTER.SMS",
+      "displayName": "ORANGE.DERS.TWITTER.SMS",
+      "displayNameShort": "ORANGE.DERS.TWITTER.SMS",
+      "unit": "number",
+      "isDisabled": false,
+      "isBuiltin": false,
+      "triggerInterval": {
+        "threshold": {
+          "min": 1000,
+          "max": null,
+          "def": 60000
+        },
+        "communication": {
+          "min": 60000,
+          "max": null,
+          "def": 300000
+        }
+      },
+      "indelible": false
+    },
+    {
+      "name": "ORANGE.DERS.TWITTER.TEXTO",
+      "type": "SOCIAL NETWORKS",
+      "defaultAggregate": "AVG",
+      "defaultResolutionMS": 1000,
+      "description": "ORANGE.DERS.TWITTER.TEXTO",
+      "displayName": "ORANGE.DERS.TWITTER.TEXTO",
+      "displayNameShort": "ORANGE.DERS.TWITTER.TEXTO",
+      "unit": "number",
+      "isDisabled": false,
+      "isBuiltin": false,
+      "triggerInterval": {
+        "threshold": {
+          "min": 1000,
+          "max": null,
+          "def": 60000
+        },
+        "communication": {
+          "min": 60000,
+          "max": null,
+          "def": 300000
+        }
+      },
+      "indelible": false
+    }
+
+	
+] }

@@ -12,14 +12,16 @@ module.exports = {
 		engine_username: 'admin',
 		engine_password: 'admin',
 		engine_load_integrations: true,
-		engine_load_modules: true,
+		engine_load_modules : true,
+		keep_discovering : true,
+		discovery_interval : '1000', //every X seconds
 		debug_stdout: true,
 		debug_file: true,
 		debug_socket: true,
 		
 		
 		//TrueSight Operations config variables
-		truesight_operations_enabled : true,
+		truesight_operations_enabled : false,
 		truesight_operations_name : 'TrueSight Operations',
 		truesight_host : 'https://madtsapps10',
 		truesight_port : '9443',
@@ -35,14 +37,15 @@ module.exports = {
 		
 		
 		//TrueSight Inteligence config variables
-		truesight_intelligence_enabled : true,
+		truesight_intelligence_enabled : false,
 		truesight_intelligence_name : 'TrueSight Intelligence',
 		truesight_intelligence_api : 'https://api.truesight.bmc.com',
 		truesight_intelligence_username : '', 
 		truesight_intelligence_token :  '', 
 		
+		
 		//TrueSight Pulse config variables
-		truesight_pulse_enabled : true,
+		truesight_pulse_enabled : false,
 		truesight_pulse_name : 'TrueSight Pulse',
 		truesight_pulse_api : 'https://api.truesight.bmc.com',
 		truesight_pulse_username : '', 

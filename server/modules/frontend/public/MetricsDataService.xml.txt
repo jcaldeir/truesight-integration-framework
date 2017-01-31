@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns1="http://webservicesapi.server.introscope.wily.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="urn:ca.wily.introscope.webservices" xmlns:impl="urn:ca.wily.introscope.webservices" xmlns:apachesoap="http://xml.apache.org/xml-soap" targetNamespace="urn:ca.wily.introscope.webservices">
+
+<!--WSDL created by Apache Axis version: 1.4 Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+
+
+<wsdl:types>
+
+
+<schema targetNamespace="urn:ca.wily.introscope.webservices" xmlns="http://www.w3.org/2001/XMLSchema">
+
+<import namespace="http://webservicesapi.server.introscope.wily.com"/>
+
+<import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+
+<complexType name="MetricData">
+
+
+<sequence>
+
+<element type="xsd:string" name="agentName" nillable="true"/>
+
+<element type="xsd:string" name="metricName" nillable="true"/>
+
+<element type="xsd:int" name="metricType"/>
+
+<element type="xsd:string" name="metricValue" nillable="true"/>
+
+</sequence>
+
+</complexType>
+
+
+<complexType name="ArrayOfMetricData">
+
+
+<complexContent>
+
+
+<restriction base="soapenc:Array">
+
+<attribute wsdl:arrayType="impl:MetricData[]" ref="soapenc:arrayType"/>
+
+</restriction>
+
+</complexContent>
+
+</complexType>
+
+
+<complexType name="TimesliceGroupedMetricData">
+
+
+<sequence>
+
+<element type="impl:ArrayOfMetricData" name="metricData" nillable="true"/>
+
+<element type="xsd:dateTime" name="timesliceEndTime" nillable="true"/>
+
+<element type="xsd:dateTime" name="timesliceStartTime" nillable="true"/>
+
+</sequence>
+
+</complexType>
+
+
+<complexType name="ArrayOfTimesliceGroupedMetricData">
+
+
+<complexContent>
+
+
+<restriction base="soapenc:Array">
+
+<attribute wsdl:arrayType="impl:TimesliceGroupedMetricData[]" ref="soapenc:arrayType"/>
+
+</restriction>
+
+</complexContent>
+
+</complexType>
+
+
+<complexType name="AgentMetricName">
+
+
+<sequence>
+
+<element type="xsd:string" name="agentName" nillable="true"/>
+
+<element type="xsd:string" name="metricName" nillable="true"/>
+
+</sequence>
+
+</complexType>
+
+
+<complexType name="ArrayOfAgentMetricName">
+
+
+<complexContent>
+
+
+<restriction base="soapenc:Array">
+
+<attribute wsdl:arrayType="impl:AgentMetricName[]" ref="soapenc:arrayType"/>
+
+</restriction>
+
+</complexContent>
+
+</complexType>
+
+
+<complexType name="TimeslicedResultPerMetricData">
+
+
+<sequence>
+
+<element type="xsd:string" name="metricValue" nillable="true"/>
+
+<element type="xsd:dateTime" name="timesliceEndTime" nillable="true"/>
+
+<element type="xsd:dateTime" name="timesliceStartTime" nillable="true"/>
+
+</sequence>
+
+</complexType>
+
+
+<complexType name="ArrayOfTimeslicedResultPerMetricData">
+
+
+<complexContent>
+
+
+<restriction base="soapenc:Array">
+
+<attribute wsdl:arrayType="impl:TimeslicedResultPerMetricData[]" ref="soapenc:arrayType"/>
+
+</restriction>
+
+</complexContent>
+
+</complexType>
+
+
+<complexType name="TimeslicedMetricDataPerAgentMetric">
+
+
+<sequence>
+
+<element type="impl:AgentMetricName" name="agentMetric" nillable="true"/>
+
+<element type="xsd:int" name="metricType"/>
+
+<element type="impl:ArrayOfTimeslicedResultPerMetricData" name="timeslicedMetricData" nillable="true"/>
+
+</sequence>
+
+</complexType>
+
+
+<complexType name="ArrayOfTimeslicedMetricDataPerAgentMetric">
+
+
+<complexContent>
+
+
+<restriction base="soapenc:Array">
+
+<attribute wsdl:arrayType="impl:TimeslicedMetricDataPerAgentMetric[]" ref="soapenc:arrayType"/>
+
+</restriction>
+
+</complexContent>
+
+</complexType>
+
+
+<complexType name="TimeslicedResultSetMetricData">
+
+
+<sequence>
+
+<element type="impl:ArrayOfMetricData" name="metricData" nillable="true"/>
+
+<element type="xsd:dateTime" name="timesliceEndTime" nillable="true"/>
+
+<element type="xsd:dateTime" name="timesliceStartTime" nillable="true"/>
+
+</sequence>
+
+</complexType>
+
+
+<complexType name="ArrayOfTimeslicedResultSetMetricData">
+
+
+<complexContent>
+
+
+<restriction base="soapenc:Array">
+
+<attribute wsdl:arrayType="impl:TimeslicedResultSetMetricData[]" ref="soapenc:arrayType"/>
+
+</restriction>
+
+</complexContent>
+
+</complexType>
+
+</schema>
+
+
+<schema targetNamespace="http://webservicesapi.server.introscope.wily.com" xmlns="http://www.w3.org/2001/XMLSchema">
+
+<import namespace="urn:ca.wily.introscope.webservices"/>
+
+<import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+
+<complexType name="IntroscopeWebServicesException">
+
+<sequence/>
+
+</complexType>
+
+</schema>
+
+</wsdl:types>
+
+
+<wsdl:message name="getLiveMetricDataResponse">
+
+<wsdl:part type="impl:ArrayOfTimeslicedResultSetMetricData" name="getLiveMetricDataReturn"/>
+
+</wsdl:message>
+
+
+<wsdl:message name="IntroscopeWebServicesException">
+
+<wsdl:part type="tns1:IntroscopeWebServicesException" name="fault"/>
+
+</wsdl:message>
+
+
+<wsdl:message name="getLiveMetricDataRequest">
+
+<wsdl:part type="xsd:string" name="agentRegex"/>
+
+<wsdl:part type="xsd:string" name="metricPrefix"/>
+
+</wsdl:message>
+
+
+<wsdl:message name="getBulkMetricDataResponse">
+
+<wsdl:part type="impl:ArrayOfTimeslicedMetricDataPerAgentMetric" name="getBulkMetricDataReturn"/>
+
+</wsdl:message>
+
+
+<wsdl:message name="getMetricDataResponse">
+
+<wsdl:part type="impl:ArrayOfTimesliceGroupedMetricData" name="getMetricDataReturn"/>
+
+</wsdl:message>
+
+
+<wsdl:message name="getMetricDataRequest">
+
+<wsdl:part type="xsd:string" name="agentRegex"/>
+
+<wsdl:part type="xsd:string" name="metricRegex"/>
+
+<wsdl:part type="xsd:dateTime" name="startTime"/>
+
+<wsdl:part type="xsd:dateTime" name="endTime"/>
+
+<wsdl:part type="xsd:int" name="dataFrequency"/>
+
+</wsdl:message>
+
+
+<wsdl:message name="getTopNMetricDataResponse">
+
+<wsdl:part type="impl:ArrayOfTimesliceGroupedMetricData" name="getTopNMetricDataReturn"/>
+
+</wsdl:message>
+
+
+<wsdl:message name="getTopNMetricDataRequest">
+
+<wsdl:part type="xsd:string" name="agentRegex"/>
+
+<wsdl:part type="xsd:string" name="metricRegex"/>
+
+<wsdl:part type="xsd:dateTime" name="startTime"/>
+
+<wsdl:part type="xsd:dateTime" name="endTime"/>
+
+<wsdl:part type="xsd:int" name="dataFrequency"/>
+
+<wsdl:part type="xsd:int" name="topNCount"/>
+
+<wsdl:part type="xsd:boolean" name="decreasingOrder"/>
+
+</wsdl:message>
+
+
+<wsdl:message name="getBulkMetricDataRequest">
+
+<wsdl:part type="impl:ArrayOfAgentMetricName" name="allMetrics"/>
+
+<wsdl:part type="xsd:dateTime" name="startTime"/>
+
+<wsdl:part type="xsd:dateTime" name="endTime"/>
+
+<wsdl:part type="xsd:int" name="dataFrequency"/>
+
+</wsdl:message>
+
+
+<wsdl:portType name="IMetricsDataService">
+
+
+<wsdl:operation name="getMetricData" parameterOrder="agentRegex metricRegex startTime endTime dataFrequency">
+
+<wsdl:input name="getMetricDataRequest" message="impl:getMetricDataRequest"/>
+
+<wsdl:output name="getMetricDataResponse" message="impl:getMetricDataResponse"/>
+
+<wsdl:fault name="IntroscopeWebServicesException" message="impl:IntroscopeWebServicesException"/>
+
+</wsdl:operation>
+
+
+<wsdl:operation name="getBulkMetricData" parameterOrder="allMetrics startTime endTime dataFrequency">
+
+<wsdl:input name="getBulkMetricDataRequest" message="impl:getBulkMetricDataRequest"/>
+
+<wsdl:output name="getBulkMetricDataResponse" message="impl:getBulkMetricDataResponse"/>
+
+<wsdl:fault name="IntroscopeWebServicesException" message="impl:IntroscopeWebServicesException"/>
+
+</wsdl:operation>
+
+
+<wsdl:operation name="getLiveMetricData" parameterOrder="agentRegex metricPrefix">
+
+<wsdl:input name="getLiveMetricDataRequest" message="impl:getLiveMetricDataRequest"/>
+
+<wsdl:output name="getLiveMetricDataResponse" message="impl:getLiveMetricDataResponse"/>
+
+<wsdl:fault name="IntroscopeWebServicesException" message="impl:IntroscopeWebServicesException"/>
+
+</wsdl:operation>
+
+
+<wsdl:operation name="getTopNMetricData" parameterOrder="agentRegex metricRegex startTime endTime dataFrequency topNCount decreasingOrder">
+
+<wsdl:input name="getTopNMetricDataRequest" message="impl:getTopNMetricDataRequest"/>
+
+<wsdl:output name="getTopNMetricDataResponse" message="impl:getTopNMetricDataResponse"/>
+
+<wsdl:fault name="IntroscopeWebServicesException" message="impl:IntroscopeWebServicesException"/>
+
+</wsdl:operation>
+
+</wsdl:portType>
+
+
+<wsdl:binding type="impl:IMetricsDataService" name="MetricsDataServiceSoapBinding">
+
+<wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+
+
+<wsdl:operation name="getMetricData">
+
+<wsdlsoap:operation soapAction=""/>
+
+
+<wsdl:input name="getMetricDataRequest">
+
+<wsdlsoap:body namespace="http://metricsdata.webservicesimpl.server.introscope.wily.com" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+</wsdl:input>
+
+
+<wsdl:output name="getMetricDataResponse">
+
+<wsdlsoap:body namespace="urn:ca.wily.introscope.webservices" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+</wsdl:output>
+
+
+<wsdl:fault name="IntroscopeWebServicesException">
+
+<wsdlsoap:fault name="IntroscopeWebServicesException" namespace="urn:ca.wily.introscope.webservices" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+</wsdl:fault>
+
+</wsdl:operation>
+
+
+<wsdl:operation name="getBulkMetricData">
+
+<wsdlsoap:operation soapAction=""/>
+
+
+<wsdl:input name="getBulkMetricDataRequest">
+
+<wsdlsoap:body namespace="http://metricsdata.webservicesimpl.server.introscope.wily.com" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+</wsdl:input>
+
+
+<wsdl:output name="getBulkMetricDataResponse">
+
+<wsdlsoap:body namespace="urn:ca.wily.introscope.webservices" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+</wsdl:output>
+
+
+<wsdl:fault name="IntroscopeWebServicesException">
+
+<wsdlsoap:fault name="IntroscopeWebServicesException" namespace="urn:ca.wily.introscope.webservices" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+</wsdl:fault>
+
+</wsdl:operation>
+
+
+<wsdl:operation name="getLiveMetricData">
+
+<wsdlsoap:operation soapAction=""/>
+
+
+<wsdl:input name="getLiveMetricDataRequest">
+
+<wsdlsoap:body namespace="http://metricsdata.webservicesimpl.server.introscope.wily.com" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+</wsdl:input>
+
+
+<wsdl:output name="getLiveMetricDataResponse">
+
+<wsdlsoap:body namespace="urn:ca.wily.introscope.webservices" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+</wsdl:output>
+
+
+<wsdl:fault name="IntroscopeWebServicesException">
+
+<wsdlsoap:fault name="IntroscopeWebServicesException" namespace="urn:ca.wily.introscope.webservices" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+</wsdl:fault>
+
+</wsdl:operation>
+
+
+<wsdl:operation name="getTopNMetricData">
+
+<wsdlsoap:operation soapAction=""/>
+
+
+<wsdl:input name="getTopNMetricDataRequest">
+
+<wsdlsoap:body namespace="http://metricsdata.webservicesimpl.server.introscope.wily.com" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+</wsdl:input>
+
+
+<wsdl:output name="getTopNMetricDataResponse">
+
+<wsdlsoap:body namespace="urn:ca.wily.introscope.webservices" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+</wsdl:output>
+
+
+<wsdl:fault name="IntroscopeWebServicesException">
+
+<wsdlsoap:fault name="IntroscopeWebServicesException" namespace="urn:ca.wily.introscope.webservices" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+</wsdl:fault>
+
+</wsdl:operation>
+
+</wsdl:binding>
+
+
+<wsdl:service name="MetricsDataService">
+
+
+<wsdl:port name="MetricsDataService" binding="impl:MetricsDataServiceSoapBinding">
+
+<wsdlsoap:address location="https://malaga:6281/introscope-web-services/services/MetricsDataService"/>
+
+</wsdl:port>
+
+</wsdl:service>
+
+</wsdl:definitions>

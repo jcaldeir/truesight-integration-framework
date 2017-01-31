@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+  <attributes>
+    <id>id0</id>
+    <soapenc:root>0</soapenc:root>
+    <soapenv:encodingStyle>http://schemas.xmlsoap.org/soap/encoding/</soapenv:encodingStyle>
+    <xsi:type>ns2:DEMConfig</xsi:type>
+  </attributes>
+  <emDashboardURL>
+    <attributes>
+      <xsi:type>xsd:string</xsi:type>
+    </attributes>
+    <value>http://malaga:6230/introscope-web-services/dashboards/alerts/IScopeView.jsp?</value>
+  </emDashboardURL>
+  <emHostName>
+    <attributes>
+      <xsi:type>xsd:string</xsi:type>
+    </attributes>
+    <value>malaga</value>
+  </emHostName>
+  <emIpAddress>
+    <attributes>
+      <xsi:type>xsd:string</xsi:type>
+    </attributes>
+    <value>10.1.230.239</value>
+  </emIpAddress>
+  <emLaunchTime>
+    <attributes>
+      <xsi:type>xsd:long</xsi:type>
+    </attributes>
+    <value>1479728505501</value>
+  </emLaunchTime>
+  <emWebServerPort>
+    <attributes>
+      <xsi:type>xsd:int</xsi:type>
+    </attributes>
+    <value>6230</value>
+  </emWebServerPort>
+</root>

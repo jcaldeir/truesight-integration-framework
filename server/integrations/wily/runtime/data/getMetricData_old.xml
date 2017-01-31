@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<attributes>
+  <soapenc:arrayType>ns1:TimesliceGroupedMetricData[0]</soapenc:arrayType>
+  <xsi:type>soapenc:Array</xsi:type>
+</attributes>

@@ -1,0 +1,22 @@
+<h3>Server
+   <small>Events</small>
+</h3>
+<div class="container-fluid">
+   
+   <!-- Sorting example-->
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <button class="pull-right btn btn-default btn-sm" ng-click="log.tableParams.sorting({})">Clear sorting</button>
+         <div class="panel-title">Sorting</div>
+      </div>
+      <table class="table table-bordered table-striped" ng-table="log.tableParams">
+         <tbody>
+            <tr ng-repeat="event in $data" class="{{event.severity}}">
+               <td data-title="'Date / Time'" sortable="'timestamp'">{{event.timestamp}}</td>
+               <td data-title="'Message'" sortable="'message'">{{event.message}}</td>
+           </tr>
+         </tbody>
+      </table>
+   </div>
+  
+</div>
