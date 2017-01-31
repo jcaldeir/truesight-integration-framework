@@ -16,16 +16,18 @@ A JavaScript Framework to integrate third-party solutions with BMC TrueSight Ope
  - CA Wily
  - Twitter search API
 
-### Prerequisites
+## Prerequisites
  
-#### Server Runtime
+### Server Runtime
 
 |  Runtime | node.js | Python | Java |
 |:---------|:-------:|:------:|:----:|
 | Required |    +    |        |      |
 
-- Install NodeJs bundle for your platform - https://nodejs.org
+
+- Install NodeJS bundle for your platform - https://nodejs.org
 - Make sure it is added to the path
+- For Windows users run : npm install --global --production windows-build-tools
 
 
 ### Install the integration framework
